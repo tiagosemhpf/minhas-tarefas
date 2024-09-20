@@ -1,23 +1,20 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-import * as enums from '../../utils/enums/Tarefa'
+import * as enums from '../../utils/enums/TipoContato'
 import { Botao } from '../../styles'
 
 type TagProps = {
-  prioridade?: enums.Prioridade
-  status?: enums.Status
-  parametro: 'status' | 'prioridade'
+  tipo?: enums.TipoContato
+  parametro: 'tipoContato'
 }
 
 function retornaCorDeFundo(props: TagProps): string {
-  if (props.parametro === 'prioridade') {
-    if (props.prioridade === enums.Prioridade.URGENTE) return variaveis.vermelho
-    if (props.prioridade === enums.Prioridade.IMPORTANTE)
-      return variaveis.amarelo2
-  } else {
-    if (props.status === enums.Status.PENDENTE) return variaveis.amarelo
-    if (props.status === enums.Status.CONCLUIDA) return variaveis.verde
+  if (props.tipo === enums.TipoContato.AMIGO) {
+    return variaveis.azulEscuro
+  }
+  if (props.tipo === enums.TipoContato.FAMILIA) {
+    return variaveis.verde
   }
   return '#ccc'
 }
@@ -36,7 +33,7 @@ export const Card = styled.div`
   }
 `
 
-export const Titulo = styled.h3`
+export const Nome = styled.h3`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
@@ -53,7 +50,7 @@ export const Tag = styled.span<TagProps>`
   display: inline-block;
 `
 
-export const Descricao = styled.textarea`
+export const Numero = styled.textarea`
   color: #8b8b8b;
   font-size: 14px;
   line-height: 24px;

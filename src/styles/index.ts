@@ -21,7 +21,7 @@ export const MainContainer = styled.main`
   height: 100vh;
   overflow-y: scroll;
 `
-export const Titulo = styled.h2`
+export const Nome = styled.h2`
   display: block;
   margin-top: 40px;
   margin-bottom: 40px;

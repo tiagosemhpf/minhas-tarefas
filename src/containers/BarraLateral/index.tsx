@@ -5,7 +5,7 @@ import { RootReducer } from '../../store'
 import { alterarTermo } from '../../store/reducers/filtro'
 import { Botao, Campo } from '../../styles'
 import * as S from './styles'
-import * as enums from '../../utils/enums/Tarefa'
+import * as enums from '../../utils/enums/TipoContato'
 import FiltroCard from '../../components/FiltroCard'
 
 type Props = {
@@ -30,35 +30,25 @@ const BarraLateral = ({ mostrarFiltros }: Props) => {
             />
             <S.Filtros>
               <FiltroCard
-                valor={enums.Status.PENDENTE}
-                criterio="status"
-                legenda="pendentes"
+                valor={enums.TipoContato.AMIGO}
+                criterio="tipoContato"
+                legenda="amigo"
               />
               <FiltroCard
-                valor={enums.Status.CONCLUIDA}
-                criterio="status"
-                legenda="concluídas"
+                valor={enums.TipoContato.FAMILIA}
+                criterio="tipoContato"
+                legenda="familia"
               />
               <FiltroCard
-                valor={enums.Prioridade.URGENTE}
-                criterio="prioridade"
-                legenda="urgentes"
-              />
-              <FiltroCard
-                valor={enums.Prioridade.IMPORTANTE}
-                criterio="prioridade"
-                legenda="importantes"
-              />
-              <FiltroCard
-                valor={enums.Prioridade.NORMAL}
-                criterio="prioridade"
-                legenda="normal"
+                valor={enums.TipoContato.TRABALHO}
+                criterio="tipoContato"
+                legenda="trabalho"
               />
               <FiltroCard criterio="todas" legenda="todas" />
             </S.Filtros>
           </>
         ) : (
-          <Botao onClick={() => navigate('/')}>Voltar a lista de tarefas</Botao>
+          <Botao onClick={() => navigate('/')}>Voltar a tela de contatos</Botao>
         )}
       </div>
     </S.Aside>
