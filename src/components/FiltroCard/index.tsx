@@ -13,7 +13,7 @@ export type Props = {
 
 const FiltroCard = ({ legenda, criterio, valor }: Props) => {
   const dispatch = useDispatch()
-  const { filtro, tarefas } = useSelector((state: RootReducer) => state)
+  const { filtro, contatos } = useSelector((state: RootReducer) => state)
 
   const verificaEstaAtivo = () => {
     const mesmoCriterio = filtro.criterio === criterio
@@ -22,9 +22,9 @@ const FiltroCard = ({ legenda, criterio, valor }: Props) => {
   }
 
   const contarTarefas = () => {
-    if (criterio === 'todas') return tarefas.itens.length
+    if (criterio === 'todas') return contatos.itens.length
     if (criterio === 'tipoContato') {
-      return tarefas.itens.filter((item) => item.tipoContato === valor).length
+      return contatos.itens.filter((item) => item.tipoContato === valor).length
     }
   }
 

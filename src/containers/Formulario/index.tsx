@@ -13,6 +13,7 @@ const Formulario = () => {
   const navigate = useNavigate()
   const [nome, setNome] = useState('')
   const [numero, setNumero] = useState('')
+  const [email, setEmail] = useState('')
   const [tipoContato, setTipoContato] = useState(enums.TipoContato.AMIGO)
 
   const cadastrarContato = (evento: FormEvent) => {
@@ -22,7 +23,8 @@ const Formulario = () => {
       cadastrar({
         nome,
         tipoContato,
-        numero
+        numero,
+        email
       })
     )
     navigate('/')
@@ -43,6 +45,12 @@ const Formulario = () => {
           onChange={({ target }) => setNumero(target.value)}
           type="text"
           placeholder="Número do contato"
+        />
+        <Campo
+          value={email}
+          onChange={({ target }) => setEmail(target.value)}
+          type="string"
+          placeholder="E-mail do contato"
         />
         <Opcoes>
           <p>Tipo de contato</p>

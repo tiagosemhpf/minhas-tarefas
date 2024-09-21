@@ -34,13 +34,11 @@ const Contato = ({
     <S.Card>
       <label htmlFor={nome}>
         <S.Nome>
-          {estaEditando && <em>Editando: </em>}
+          {estaEditando && <em>Editando contato: </em>}
           {nome}
         </S.Nome>
       </label>
-      <S.Tag parametro="tipoContato" tipoContato={tipoContato}>
-        {tipoContato}
-      </S.Tag>
+      <S.Tag parametro="tipoContato">{tipoContato}</S.Tag>
       <S.Numero
         disabled={!estaEditando}
         value={numero}

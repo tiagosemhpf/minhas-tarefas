@@ -5,7 +5,7 @@ import { MainContainer, Nome } from '../../styles/index'
 import { RootReducer } from '../../store'
 
 const ListaDeContatos = () => {
-  const { itens } = useSelector((state: RootReducer) => state.tarefas)
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
   const { termo, criterio, valor } = useSelector(
     (state: RootReducer) => state.filtro
   )
