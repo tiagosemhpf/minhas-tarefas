@@ -37,6 +37,22 @@ export const Nome = styled.h3`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
+
+  input {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    border: 1px solid ${variaveis.cinzaClaro};
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  input:disabled {
+    background-color: transparent;
+    border: none;
+  }
 `
 
 export const Tag = styled.span<TagProps>`
@@ -62,6 +78,22 @@ export const Numero = styled.textarea`
   resize: none;
   border: none;
   background-color: transparent;
+`
+
+export const Email = styled.input`
+  color: #8b8b8b;
+  font-size: 14px;
+  line-height: 24px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid ${variaveis.cinzaClaro};
+  border-radius: 8px;
+
+  &:disabled {
+    background-color: transparent;
+    border: none;
+  }
 `
 
 export const BarraAcoes = styled.div`
